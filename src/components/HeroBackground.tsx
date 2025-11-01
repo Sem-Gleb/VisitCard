@@ -195,7 +195,7 @@ export function HeroBackground() {
         <ParticleField />
         <WaveField />
         <FloatingOrbs />
-        <fog attach="fog" args={['#000000', 8, 15]} />
+        <fog attach="fog" args={['transparent', 8, 15]} />
       </Canvas>
     </div>
   );

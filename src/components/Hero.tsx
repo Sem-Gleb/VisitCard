@@ -11,10 +11,10 @@ export function Hero() {
       
       {/* Layer 2: Dark overlay for visibility (z-index: 1) */}
       <div 
-        className="absolute inset-0 pointer-events-none dark:opacity-100 opacity-40" 
+        className="absolute inset-0 pointer-events-none opacity-0" 
         style={{ 
           zIndex: 1,
-          background: 'radial-gradient(circle at center, transparent 0%, rgba(13, 16, 23, 0.7) 100%)'
+          background: 'radial-gradient(circle at center, transparent 0%, rgba(13, 16, 23, 0) 100%)'
         }} 
       />
       
