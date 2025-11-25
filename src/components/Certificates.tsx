@@ -36,7 +36,7 @@ export function Certificates() {
   ];
 
   return (
-    <section id="certificates" className="py-24 px-4 bg-muted/30" ref={ref}>
+    <section id="certificates" className="py-24 px-4 bg-muted/0" ref={ref}>
       <div className="container mx-auto max-w-6xl w-full">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

@@ -1,20 +1,47 @@
 import { motion } from "framer-motion";
 import { Download, Mail, Phone, Send } from "lucide-react";
+import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
 import { HeroBackground } from "./HeroBackground";
+import { ExperienceBackground } from "./ExperienceBackground";
 
 export function Hero() {
+  const { resolvedTheme } = useTheme();
+  const currentTheme = resolvedTheme ?? "dark";
+  const isDark = currentTheme === "dark";
+  const overlayBackground = isDark
+    ? "radial-gradient(circle at center, rgba(5,8,15,0.2) 0%, rgba(5,8,15,0.85) 80%)"
+    : "radial-gradient(circle at center, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.9) 70%)";
+  const logoStyle = {
+    background: "linear-gradient(125deg, hsl(188 94% 43%), hsl(217 91% 60%))",
+    boxShadow: isDark ? "none" : "0 0 40px hsl(188 94% 43% / 0.3)"
+  };
+  const nameGlowStyle = isDark
+    ? {
+        background: "linear-gradient(90deg, hsl(188 94% 43% / 0.08), hsl(217 91% 60% / 0.08))",
+        zIndex: -1
+      }
+    : {
+        background: "linear-gradient(90deg, hsl(188 94% 43% / 0.2), hsl(188 94% 43% / 0.2))",
+        zIndex: -1
+      };
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 pb-20">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 pb-12 md:pb-16 isolate bg-white dark:bg-background text-neutral-800 dark:text-white">
       {/* Layer 1: 3D Background (z-index: 0) */}
       <HeroBackground />
       
+      {/* Layer 1.5: Particles & geometry overlay */}
+      <div className="absolute inset-0" style={{ zIndex: 1 }}>
+        <ExperienceBackground variant="hero" />
+      </div>
+      
       {/* Layer 2: Dark overlay for visibility (z-index: 1) */}
       <div 
-        className="absolute inset-0 pointer-events-none opacity-0" 
+        className="absolute inset-0 pointer-events-none" 
         style={{ 
-          zIndex: 1,
-          background: 'radial-gradient(circle at center, transparent 0%, rgba(13, 16, 23, 0) 100%)'
+          zIndex: 2,
+          background: overlayBackground
         }} 
       />
       
@@ -26,7 +53,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-          >
+            >
             {/* Animated Logo */}
             <motion.div
               className="inline-block mb-4"
@@ -36,10 +63,7 @@ export function Hero() {
             >
               <motion.div
                 className="w-20 h-20 mx-auto rounded-2xl flex items-center justify-center text-white text-3xl font-bold relative overflow-hidden group cursor-pointer"
-                style={{
-                  background: 'linear-gradient(135deg, hsl(188 94% 43%), hsl(217 91% 60%))',
-                  boxShadow: '0 0 40px hsl(188 94% 43% / 0.3)'
-                }}
+                style={logoStyle}
                 whileHover={{ scale: 1.1, rotate: 5 }}
                 transition={{ type: "spring", stiffness: 400 }}
               >
@@ -65,7 +89,7 @@ export function Hero() {
             </motion.div>
             
             {/* Name */}
-            <h1 className="text-5xl md:text-7xl font-bold mb-4 relative">
+            <h1 className="text-5xl md:text-7xl font-bold mb-4 relative text-neutral-900 dark:text-white">
               <motion.span
                 className="inline-block bg-gradient-to-r from-foreground via-primary to-foreground bg-clip-text text-transparent"
                 initial={{ backgroundPosition: "0% 50%" }}
@@ -77,10 +101,7 @@ export function Hero() {
               </motion.span>
               <motion.div
                 className="absolute -inset-1 blur-xl"
-                style={{
-                  background: 'linear-gradient(90deg, hsl(188 94% 43% / 0.2), hsl(188 94% 43% / 0.2))',
-                  zIndex: -1
-                }}
+                style={nameGlowStyle}
                 animate={{
                   opacity: [0.3, 0.6, 0.3],
                   scale: [1, 1.05, 1],
@@ -112,7 +133,7 @@ export function Hero() {
 
           {/* Tagline */}
           <motion.p
-            className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto"
+            className="text-xl md:text-2xl text-neutral-600 dark:text-muted-foreground max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -122,7 +143,7 @@ export function Hero() {
 
           {/* Tech Stack Tags */}
           <motion.div
-            className="flex flex-wrap justify-center gap-3 text-sm"
+            className="flex flex-wrap justify-center gap-3 text-sm text-neutral-700 dark:text-muted-foreground"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
@@ -130,7 +151,7 @@ export function Hero() {
             {["React", "TypeScript", "Next.js", "Redux"].map((tech, index) => (
               <motion.span
                 key={tech}
-                className="px-4 py-2 bg-card border border-border rounded-lg text-foreground font-medium"
+                className="px-4 py-2 bg-white text-neutral-800 border border-border rounded-lg font-medium dark:bg-card dark:text-foreground"
                 whileHover={{ 
                   scale: 1.05, 
                   boxShadow: "0 0 40px hsl(188 94% 43% / 0.3)" 
@@ -154,11 +175,7 @@ export function Hero() {
             <Button
               size="lg"
               asChild
-              className="gap-2 text-white border-0 hover:scale-105 transition-all"
-              style={{
-                background: 'linear-gradient(135deg, hsl(188 94% 43%), hsl(217 91% 60%))',
-                boxShadow: '0 0 40px hsl(188 94% 43% / 0.3)'
-              }}
+              className="gap-2 text-white border-0 hover:scale-105 transition-all bg-gradient-to-br from-sky-500 to-blue-600 shadow-none"
             >
               <a href="/resume.pdf" download="Резюме_Семенченко_Глеб.pdf">
                 <Download className="w-5 h-5" />
@@ -168,7 +185,7 @@ export function Hero() {
             <Button
               size="lg"
               variant="outline"
-              className="gap-2 border-primary/50 hover:bg-primary/10 hover:border-primary hover:scale-105 transition-all"
+              className="gap-2 border-primary/50 hover:bg-primary/10 hover:border-primary hover:scale-105 transition-all shadow-none text-neutral-800 dark:text-white"
               onClick={() => document.getElementById('contacts')?.scrollIntoView({ behavior: 'smooth' })}
             >
               <Mail className="w-5 h-5" />
@@ -178,7 +195,7 @@ export function Hero() {
 
           {/* Contact Info */}
           <motion.div
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8 text-sm text-muted-foreground"
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8 text-sm text-neutral-600 dark:text-muted-foreground"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.7 }}
