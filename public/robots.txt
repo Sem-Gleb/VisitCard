@@ -13,5 +13,5 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://visit-card-ashy.vercel.app/sitemap.xml
-Host: visit-card-ashy.vercel.app
+Sitemap: https://visit-card-gleb.vercel.app/sitemap.xml
+Host: visit-card-gleb.vercel.app
