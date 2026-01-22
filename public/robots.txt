@@ -12,3 +12,6 @@ Allow: /
 
 User-agent: *
 Allow: /
+
+Sitemap: https://visit-card-ashy.vercel.app/sitemap.xml
+Host: visit-card-ashy.vercel.app

@@ -10,8 +10,8 @@ export function Experience() {
   const experiences = [
     {
       company: "ООО «Битфорс»",
-      position: "Frontend-разработчик",
-      period: "июнь 2025 — ноябрь 2025 (5 месяцев)",
+      position: "Frontend-разработчикь в финтех стартап",
+      period: "июль 2025 — декабрь 2025 (6 месяцев)",
       current: true,
       achievements: [
         "Разработка и поддержка клиентской части веб-приложения",
@@ -22,21 +22,19 @@ export function Experience() {
         "Оценка разработанного веб-сайта или приложения изначальному макету",
         "Оптимизация программного кода"
       ],
-      technologies: ["React", "TypeScript", "React Router", "SCSS", "Next.js", "Redux Toolkit", "WebSockets", "Axios", "MUI", "LazyComponents"]
+      technologies: ["React", "TypeScript", "React Router", "SCSS", "Next.js", "WebSockets", "Axios", "MUI", "LazyComponents"]
     },
     {
       company: "КРОК",
       position: "Frontend Developer (React, NextJS)",
-      period: "май 2021 — май 2025 (4 года и 1 месяц)",
+      period: "Март 2024 — май 2025 (1 год и 3 месяца)",
       achievements: [
         "Разработал и оптимизировал форму оплаты: сократил количество шагов с 5 до 2, что повысило конверсию на 40% и увеличило выручку",
         "Ускорил загрузку страниц: оптимизировал бандлы и внедрил code splitting, время загрузки снизилось на 60%, отказы уменьшились на 25%",
         "Внедрил SSR/SSG на Next.js для ключевых страниц: улучшил SEO и время первого рендера на 50%",
-        "Рефакторинг устаревшего кода: миграция с Redux на Zustand, упростил управление состоянием, уменьшил размер бандла на 30%",
-        "Разработал компонентную библиотеку на TypeScript и Tailwind: ускорил разработку новых фич на 35%, повысил консистентность UI",
         "Внедрил адаптивную верстку: покрытие мобильных устройств выросло до 95%, мобильный трафик увеличился на 50%",
         "Настроил CI/CD и автоматизировал тестирование: покрытие тестами выросло до 80%, количество багов в продакшене снизилось на 45%",
-        "Оптимизировал работу с API: внедрил GraphQL с Apollo Client и кеширование через React Query, количество запросов сократилось на 40%, UX улучшился",
+        "Оптимизировал работу с API: внедрил GraphQL с Apollo Client и кеширование через React Query, количество запросов сократилось на 40%, UX стал лучше",
         "Создал интерактивные 3D-визуализации на Three.js и WebGL: повысил вовлеченность пользователей на 65%, время на сайте выросло на 50%",
         "Реализовал анимации на GSAP и Framer Motion: улучшил восприятие интерфейса, снизил показатель отказов на 20%"
       ],
@@ -45,16 +43,16 @@ export function Experience() {
     {
       company: "REDMADROBOT",
       position: "Frontend-разработчик intern",
-      period: "сентябрь 2021 — ноябрь 2021 (3 месяца)",
+      period: "Октябрь 2023 — Январь 2024 (4 месяца)",
       achievements: [
-        "Работа с API (Axios, websockets)",
-        "Разработка кастомной дизайн-системы под бренд",
+        "Работа с API",
+        "Работа с легаси кодом",
         "Оптимизация dashboard для маркетплейса (SEO + lazy components)",
         "Верстка и создание адаптивных интерфейсов (Tailwind, SCSS)",
         "Улучшение метрик Core Web Vitals (LCP, CLS, INP)",
         "Написание тестов (unit, e2e на Jest и RTL)"
       ],
-      technologies: ["React", "TypeScript", "Tailwind CSS", "Redux", "SCSS", "CSS-in-JS", "React Query", "Axios", "Jest", "React Testing Library", "Git", "Webpack", "Vite", "Core Web Vitals"]
+      technologies: ["React", "TypeScript", "Tailwind CSS", "SCSS", "CSS-in-JS",  "Axios", "Jest", "React Testing Library", "Git", "Vite", "Core Web Vitals"]
     }
   ];
 
@@ -73,7 +71,7 @@ export function Experience() {
 
         <div className="relative">
           {/* Timeline line */}
-          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-[3px] bg-gradient-to-b from-sky-500 via-primary to-purple-600 opacity-70 blur-[1px]" />
+          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-[3px] bg-gradient-to-b from-sky-500 via-primary to-purple-600 opacity-100" />
 
           {experiences.map((exp, index) => (
             <motion.div

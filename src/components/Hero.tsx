@@ -53,7 +53,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            >
+          >
             {/* Animated Logo */}
             <motion.div
               className="inline-block mb-4"

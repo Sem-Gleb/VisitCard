@@ -51,12 +51,12 @@ export function About() {
           >
             <div className="prose prose-base md:prose-lg dark:prose-invert max-w-none space-y-3 md:space-y-4">
               <p className="text-base md:text-lg leading-relaxed text-neutral-700 dark:text-muted-foreground">
-                Frontend-разработчик с опытом более <span className="text-primary font-semibold">4 лет</span>. 
+                Frontend-разработчик с опытом более <span className="text-primary font-semibold">2 лет</span>. 
                 Специализируюсь на <span className="text-primary font-semibold">React, TypeScript, Next.js</span>.
               </p>
               <p className="text-base md:text-lg leading-relaxed text-neutral-700 dark:text-muted-foreground">
                 Имею опыт интеграции с <span className="text-primary font-semibold">REST и WebSocket API</span>, 
-                настройки взаимодействия frontend с backend, создания кастомных дизайн-систем и UI-библиотек.
+                настройки взаимодействия frontend с backend.
               </p>
               <p className="text-base md:text-lg leading-relaxed text-neutral-700 dark:text-muted-foreground">
                 Ценю чистый, поддерживаемый код и pixel-perfect верстку. 

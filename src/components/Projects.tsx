@@ -113,21 +113,21 @@ export function Projects() {
               <div className="relative p-6">
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-r from-sky-500/10 via-transparent to-purple-500/10" />
                 <div className="relative z-10">
-                  <h3 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors">
-                    {project.title}
-                  </h3>
-                  <p className="text-muted-foreground mb-4 leading-relaxed">
-                    {project.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.technologies.map((tech) => (
-                      <span
-                        key={tech}
+                <h3 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors">
+                  {project.title}
+                </h3>
+                <p className="text-muted-foreground mb-4 leading-relaxed">
+                  {project.description}
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {project.technologies.map((tech) => (
+                    <span
+                      key={tech}
                         className="px-3 py-1 bg-background/70 border border-border/60 rounded-md text-xs font-medium"
-                      >
-                        {tech}
-                      </span>
-                    ))}
+                    >
+                      {tech}
+                    </span>
+                  ))}
                   </div>
                 </div>
               </div>

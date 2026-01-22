@@ -1,0 +1,17 @@
+{
+  "name": "Семенченко Глеб — Frontend-разработчик",
+  "short_name": "Gleb",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#05080f",
+  "theme_color": "#0ea5e9",
+  "icons": [
+    {
+      "src": "/icons8-google-code-color-glass-96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    }
+  ]
+}
+
+
