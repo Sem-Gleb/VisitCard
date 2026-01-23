@@ -12,7 +12,6 @@ export function Experience() {
       company: "ООО «Битфорс»",
       position: "Frontend-разработчикь в финтех стартап",
       period: "июль 2025 — декабрь 2025 (6 месяцев)",
-      current: true,
       achievements: [
         "Разработка и поддержка клиентской части веб-приложения",
         "Разработка макетов интерфейса сайтов и веб-страниц",
@@ -95,18 +94,11 @@ export function Experience() {
                 transition={{ duration: 0.4, delay: index * 0.2 + 0.3 }}
                 className={`hidden md:block absolute top-6 ${
                   index % 2 === 0 ? "right-0 translate-x-1/2" : "left-0 -translate-x-1/2"
-                } w-4 h-4 rounded-full ${
-                  exp.current ? "bg-primary animate-glow" : "bg-primary/50"
-                } border-4 border-background`}
+                } w-4 h-4 rounded-full bg-primary/50 border-4 border-background`}
               />
 
               <div
-                className={`relative overflow-hidden rounded-3xl border p-6 transition-all text-left bg-background/85
-                  ${
-                    exp.current
-                      ? "border-primary/60 shadow-[0_20px_45px_rgba(14,165,233,0.15)]"
-                      : "border-border/50 shadow-[0_15px_40px_rgba(2,6,23,0.35)]"
-                  }`}
+                className="relative overflow-hidden rounded-3xl border p-6 transition-all text-left bg-background/85 border-border/50 shadow-[0_15px_40px_rgba(2,6,23,0.35)]"
               >
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-r from-sky-500/10 via-transparent to-purple-500/10" />
                 <div className="relative z-10">
@@ -117,11 +109,6 @@ export function Experience() {
                     </div>
                     <h3 className="text-xl font-bold">{exp.company}</h3>
                   </div>
-                  {exp.current && (
-                    <span className="px-3 py-1 bg-primary/10 border border-primary rounded-full text-xs text-primary font-semibold">
-                      Сейчас здесь
-                    </span>
-                  )}
                 </div>
                 
                 <p className="text-lg font-semibold text-primary mb-2">{exp.position}</p>
